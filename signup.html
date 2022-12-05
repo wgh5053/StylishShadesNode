@@ -1,0 +1,47 @@
+<%- include('Header.ejs')%>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<body>
+<div class="container text-center">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div>
+        <div class="text-center">
+          <h1>Welcome! Please sign up below!</h1>
+          <h2>Sign Up</h2>
+          <h6>Register your account with your name, email, phone number, and password!</h6>
+        </div>
+        <form>
+          <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+            <div class="mb-3">
+              <label for="name" class="form-label">First & Last Name: </label>
+              <input formControlName ='fullname' type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            </div>
+            <br>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number: </label>
+              <input formControlName ='phonenumber' type="text" class="form-control" id="phoneNumber">
+            </div>
+            <br>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email Address: </label>
+              <input formControlName ='email' type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
+            </div>
+            <br>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password: </label>
+              <input formControlName ='password' type="password" class="form-control" id="password" aria-describedby="emailHelp">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </form>
+        <br>
+        <a href="/login"> Already have an account? Click here to log in! </a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
